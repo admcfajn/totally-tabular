@@ -1,0 +1,185 @@
+<style>
+#tab-container{
+	width:100%;
+	margin:80px auto;
+
+	float:left;
+	position:relative;
+	border:1px solid #000;
+	box-shadow: 0 0 1px #515151, 0 0 1px #515151;
+	border-radius:8px;
+}
+
+
+.tab-title{
+	float:left;
+	position:relative;
+	clear:none;
+	display:block;
+	width:auto;
+	line-height:40px;
+	height:40px;
+	padding:0 10px;
+		border-radius:8px;
+	background:#00f;
+	color:#fff;
+	z-index:100;
+	font-size:18px;
+	font-family: 'Arial', 'Helvetica', Sans-serif, sans;
+	text-transform:uppercase;
+	text-align: center;
+}   
+.tab-title:hover{
+	color:#000;
+} 
+.tab-content{
+	width:90%;
+	position:absolute;
+	top:40px;
+	padding: 1em 5%;
+	border: 1px solid #ccf;
+	color:#003d7b;
+	display:none;
+	z-index:80;
+}   
+
+
+.tab-widget .current-item{
+	background:#003169;
+	background-image: linear-gradient(top, #013d79, #002559);
+}
+.tab-visible{display:block;} 
+  
+  
+/* SIDE TABS
+
+#tab-container{
+  width:100%;
+  margin:auto;
+  height:auto;
+  border:1px solid #000;
+  
+  -moz-box-shadow: 0 0 1px #515151, 0 0 1px #515151;
+  -webkit-box-shadow: 0 0 1px #515151, 0 0 1px #515151;
+  box-shadow: 0 0 1px #515151, 0 0 1px #515151;
+
+  -moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;
+}
+.tab-title{
+  width:auto;
+  margin-right:60%;
+  float:left;
+  
+  color:#fff;
+  font-size:22px;
+  line-height:62px;
+  font-family: 'Aller-Light', 'Arial', 'Helvetica', Sans-serif, sans;
+  text-transform:uppercase;
+  text-align: center;
+
+  height:62px;
+    
+  background:#5ca441;
+  background-image: -moz-linear-gradient(left, #366d34, #69b646);
+  background-image: -ms-linear-gradient(left, #366d34, #69b646);
+  background-image: -webkit-linear-gradient(left, #366d34, #69b646);
+  background-image: -o-linear-gradient(left, #366d34, #69b646);
+  background-image: linear-gradient(left, #366d34, #69b646);
+  
+  position:relative;
+  z-index:90;
+  
+  -moz-box-shadow: inset -1px -1px 1px #5ca441;
+  -webkit-box-shadow: inset -1px -1px 1px #5ca441;
+  box-shadow: inset -1px -1px 1px #5ca441;  
+}   
+
+.tab-widget:first-child .tab-title{
+  -moz-border-radius-topleft: 8px; -webkit-border-top-left-radius: 8px; border-top-left-radius: 8px;
+}
+.tab-widget:last-child .tab-title{
+  -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; border-bottom-left-radius: 8px;
+}
+
+.tab-widget .current-item{
+  background:#003169;
+  background-image: -moz-linear-gradient(top, #013d79, #002559);
+  background-image: -ms-linear-gradient(top, #013d79, #002559);
+  background-image: -webkit-linear-gradient(top, #013d79, #002559);
+  background-image: -o-linear-gradient(top, #013d79, #002559);
+  background-image: linear-gradient(top, #013d79, #002559);
+  
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;   
+}
+.tab-widget .current-item:after{
+  content: "";
+  width:16px;
+  height:34px;
+  float:right;
+  margin-right:-16px;
+  margin-top:14px;
+  background: url(img/tab-widget-current.png) no-repeat;
+}
+.tab-content{
+  width:52%;
+  height:212px;
+  padding:18px 4%;
+  float:right;
+  color:#003d7b;
+  display:none;
+
+  position:absolute;
+  right:0;
+  top:0;
+  z-index:80;
+  background: #fff url(img/tab-widget-content.png) repeat-y top left;
+  -moz-border-radius-topright: 8px; -webkit-border-top-right-radius: 8px;  border-top-right-radius: 8px;
+  -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px; border-bottom-right-radius: 8px;
+}   
+
+.tab-content h6{font-size:30px;text-transform:uppercase;}
+.tab-widget-content-title-green{color:#69b645;font-family: 'Aller-Light', 'Arial', 'Helvetica', Sans-serif, sans;} 
+.tab-widget-content-title-blue{color:#1d417a;font-weight:bold;font-family: 'Aller-Bold', 'Arial', 'Helvetica', Sans-serif, sans;}
+
+  #tab-widget-wrap{
+    width:100%;
+    height:auto;
+    float:left;
+    position:fixed;
+    bottom:0;left:0;
+    
+    background:#ccf;  
+  }
+
+  #tab-widget{
+    position:absolute;
+
+    border:2px groove #000;
+    height:180px;
+  }  
+  .tab-title{
+    width:40%;
+    margin-right:60%;
+    float:left;
+    
+    background:#00f;
+    color:#fff;
+    font-size:2em;
+    height:80px;
+  }    
+  .tab-content{
+    position:absolute;
+    right:0;
+    top:0;
+    
+    width:60%;
+    float:right;
+    display:none;
+    height:auto;
+  }    
+  .tab-visible{display:block;}
+*/  
+
+</style>
