@@ -3,8 +3,10 @@ tabular
 
 Tabbed Widget Sidebar WordPress plugin
 
-Widgets Must have titles for this plugin to work. 
-Failure to provide a title will result in the title-field not showing, breaking layout.
+Activate Plugin
 
-Use [tabular] shortcode to include widgets added to the Tabbed-Sidebar in your WordPress theme. 
-Tabs will cycle automatically & are clickable.
+Visit Appearance >> Widgets & Add widgets to 'Tabular Sidebar'
+
+Use [tabular] shortcode Tabular-Sidebar in your WordPress theme. 
+
+Tabs will cycle automatically & switch between tabs when clicked.
