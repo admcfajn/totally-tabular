@@ -54,8 +54,9 @@ add_action('wp_head', 'tabular_code');
 function tabular_shortcode_output(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
 		echo'<div id="tab-container" class="widget-area rotator-tab-section">';
+		// dynamic_sidebar( 'tabbed-sidebar' );
 		dynamic_sidebar( 'tabbed-sidebar' );
-		echo'<br style="position:absolute;clear:both;" />';
+	//	echo'<br style="position:absolute;clear:both;" />';
 		echo'</div>';
 	endif;
 }

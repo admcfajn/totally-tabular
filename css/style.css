@@ -1,13 +1,12 @@
 <style>
 #tab-container{
 	width:100%;
-	margin:80px auto;
+	margin:1em auto;
 
 	float:left;
 	position:relative;
-	border:1px solid #000;
-	box-shadow: 0 0 1px #515151, 0 0 1px #515151;
-	border-radius:8px;
+	background:#e8e8e8;
+	box-shadow: inset 0 0 1px #515151;
 }
 
 
@@ -16,28 +15,33 @@
 	position:relative;
 	clear:none;
 	display:block;
+	
 	width:auto;
 	line-height:40px;
 	height:40px;
-	padding:0 10px;
-		border-radius:8px;
-	background:#00f;
+	padding:0 2%;
+	
+	background:#55c;
 	color:#fff;
-	z-index:100;
 	font-size:18px;
 	font-family: 'Arial', 'Helvetica', Sans-serif, sans;
 	text-transform:uppercase;
 	text-align: center;
+	z-index:100;	
 }   
 .tab-title:hover{
-	color:#000;
+	background:#22c;
 } 
 .tab-content{
 	width:90%;
 	position:absolute;
 	top:40px;
-	padding: 1em 5%;
-	border: 1px solid #ccf;
+	padding: 20px 5%;
+	
+	font-size:16px;
+	
+	background:#f8f8f8;
+	box-shadow: inset 0 0 1px #ccf;
 	color:#003d7b;
 	display:none;
 	z-index:80;
