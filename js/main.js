@@ -5,22 +5,20 @@ $(window).load(function() { //start after HTML, images have loaded
 
 $('.tab-widget .tab-content').hide(); //hide all items
 
-
 var InfiniteRotator =
 {
   init: function()
   {
     var initialFadeIn = 0; //initial fade-in time (in milliseconds)
-    var itemInterval = 3000; //interval between items (in milliseconds)
+    var itemInterval = 8000; //interval between items (in milliseconds)
     var fadeTime = 500; //cross-fade time (in milliseconds)
 
     var numberOfItems = $('.tab-widget').length; //count number of items
     var currentItem = 0; //set current item
 	var verticalPadding = 120; //a little wiggle-room
 
-	var titleWidth = (100 / numberOfItems - 4) + '%';
+	var titleWidth = (100 / numberOfItems - 4) + '%'; //container-width minus 2% padding on either side
 	$('.tab-title').css('width', titleWidth);
-	//$('.tab-title').css('padding', '0 1%');
 	
     //show first item
     $('.tab-widget .tab-title').eq(currentItem).toggleClass('current-item');
@@ -29,9 +27,8 @@ var InfiniteRotator =
 
     //loop through the items
     var infiniteLoop = setInterval(function(){
-      $('.tab-widget .tab-content').eq(currentItem).hide();//.fadeOut(fadeTime);
+      $('.tab-widget .tab-content').eq(currentItem).hide();
       
-      //$('.tab-title').not(this).removeClass('current-item');
       if(currentItem == numberOfItems -1){
         currentItem = 0;
       }else{
