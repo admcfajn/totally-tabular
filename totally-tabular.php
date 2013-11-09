@@ -35,7 +35,7 @@ function tabular_sidebar(){
   register_sidebar( array(
     'name' => __( 'Tabbed Sidebar', 'dabzo' ),
     'id' => 'tabbed-sidebar',
-    'description' => __( 'Side-bar to display widgets as tabs', 'dabzo' ),
+    'description' => __( 'Sidebar to display widgets as tabs via [tabular] shortcode.', 'dabzo' ),
     'before_widget' => '<div class="tab-widget">',
     'after_widget' => '</div></div>',
     'before_title' => '<h5 class="tab-title">',
@@ -54,11 +54,16 @@ add_action('wp_head', 'tabular_code');
 function tabular_shortcode_output(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
 		echo'<div id="tab-container" class="widget-area rotator-tab-section">';
-		// dynamic_sidebar( 'tabbed-sidebar' );
+		add_filter ( 'widget_title', 'format_tabular_widgets' );
 		dynamic_sidebar( 'tabbed-sidebar' );
-	//	echo'<br style="position:absolute;clear:both;" />';
+		remove_filter ( 'widget_title', 'format_tabular_widgets' );
 		echo'</div>';
 	endif;
+}
+
+function format_tabular_widgets( $title ) {	
+	$title = "<span>" . $title . "</span>";
+	return $title;
 }
 
 //[tabular]
@@ -66,6 +71,5 @@ function show_tabs( $atts ){
 	return tabular_shortcode_output();
 }
 add_shortcode( 'tabular', 'show_tabs' );
-
 
 ?>
