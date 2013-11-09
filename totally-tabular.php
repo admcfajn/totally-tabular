@@ -43,8 +43,7 @@ add_action('init', 'tabular_sidebar');
 
 function tabular_code(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
-		echo '<script>window.jQuery || document.write(\'<script src="js/vendor/jquery-1.10.2.min.js"><\/script>\')</script>';
-		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . $url = plugins_url() . "/totally-tabular/css/style.css' />";
+		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . plugins_url('/css/style.css' , __FILE__) . "' />";
 	endif;
 }
 add_action('wp_footer', 'tabular_code'); 
@@ -52,7 +51,7 @@ add_action('wp_footer', 'tabular_code');
 function my_scripts_method() {
 	wp_enqueue_script(
 		'custom-script',
-		plugins_url() . '/totally-tabular/js/main.js',
+		plugins_url('/js/main.js' , __FILE__),
 		array( 'jquery' )
 	);
 }
