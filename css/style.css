@@ -30,7 +30,8 @@
 	z-index:100;	
 }   
 .tab-title:hover{
-	background:#22c;
+	background:#e8e8e8;
+	color:#003169;	
 } 
 .tab-content{
 	width:90%;
@@ -51,6 +52,7 @@
 .tab-widget .current-item{
 	background:#003169;
 	background-image: linear-gradient(top, #013d79, #002559);
+	color:#fff;
 }
 .tab-visible{display:block;} 
   
