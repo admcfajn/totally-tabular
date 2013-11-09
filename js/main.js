@@ -1,5 +1,4 @@
 
-<script>
 (function($){ // Closure to avoid jQuery conflicts
 $(window).load(function() { //start after HTML, images have loaded
 
@@ -55,4 +54,3 @@ var InfiniteRotator =
 InfiniteRotator.init();
 });     
 })(jQuery);
-</script>

@@ -25,15 +25,12 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-ReadMe: Widgets Must have titles for this plugin to work. 
-Failure to provide a title will result in the title-field not showing, breaking layout.
-
-Use [tabular] shortcode to include widgets added to the Tabbed-Sidebar in your WordPress theme. 
+ReadMe: Use [tabular] shortcode to include widgets added to the Tabbed-Sidebar in your WordPress theme. 
 Tabs will cycle automatically & are clickable.
 */
 function tabular_sidebar(){
   register_sidebar( array(
-    'name' => __( 'Tabbed Sidebar', 'dabzo' ),
+    'name' => __( 'Tabular Sidebar', 'dabzo' ),
     'id' => 'tabbed-sidebar',
     'description' => __( 'Sidebar to display widgets as tabs via [tabular] shortcode.', 'dabzo' ),
     'before_widget' => '<div class="tab-widget">',
@@ -45,11 +42,26 @@ function tabular_sidebar(){
 add_action('init', 'tabular_sidebar');
 
 function tabular_code(){
-	echo '<script>window.jQuery || document.write(\'<script src="js/vendor/jquery-1.10.2.min.js"><\/script>\')</script>';
-	require_once('css/style.css');
-	require_once('js/main.js');
+	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
+		echo '<script>window.jQuery || document.write(\'<script src="js/vendor/jquery-1.10.2.min.js"><\/script>\')</script>';
+		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . $url = plugins_url() . "/totally-tabular/css/style.css' />";
+	endif;
 }
-add_action('wp_head', 'tabular_code'); 
+add_action('wp_footer', 'tabular_code'); 
+
+function my_scripts_method() {
+	wp_enqueue_script(
+		'custom-script',
+		plugins_url() . '/totally-tabular/js/main.js',
+		array( 'jquery' )
+	);
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+
+function format_tabular_widgets( $title ) {	
+	$title = "<span>" . $title . "</span>";
+	return $title;
+}
 
 function tabular_shortcode_output(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
@@ -59,11 +71,6 @@ function tabular_shortcode_output(){
 		remove_filter ( 'widget_title', 'format_tabular_widgets' );
 		echo'</div>';
 	endif;
-}
-
-function format_tabular_widgets( $title ) {	
-	$title = "<span>" . $title . "</span>";
-	return $title;
 }
 
 //[tabular]
