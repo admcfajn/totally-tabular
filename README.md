@@ -1,12 +1,10 @@
-tabular
-=======
+Totally Tabular - Tabbed Widget Sidebar WordPress plugin
 
-Tabbed Widget Sidebar WordPress plugin
+1. Activate Plugin
 
-Activate Plugin
+2. Visit Appearance >> Widgets & Add widgets to 'Tabular Sidebar'
 
-Visit Appearance >> Widgets & Add widgets to 'Tabular Sidebar'
+3. Use [tabular] shortcode Tabular-Sidebar in your WordPress theme.
 
-Use [tabular] shortcode Tabular-Sidebar in your WordPress theme. 
+4. Tabs will cycle automatically & switch between tabs when clicked.
 
-Tabs will cycle automatically & switch between tabs when clicked.
