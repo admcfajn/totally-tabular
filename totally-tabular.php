@@ -29,6 +29,8 @@ ReadMe: Use [tabular] shortcode to include widgets added to the Tabbed-Sidebar i
 Tabs will cycle automatically & are clickable.
 */
 
+require_once('admin-page.php');
+
 function tabular_sidebar(){
   register_sidebar( array(
     'name' => __( 'Tabular Sidebar', 'dabzo' ),
@@ -45,6 +47,17 @@ add_action('init', 'tabular_sidebar');
 function tabular_code(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
 		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . plugins_url('/css/style.css' , __FILE__) . "' />";
+		
+		$options = get_option('ttabular_settings'); 
+		$defaultItemInterval = "5000";
+		$itemInterval = $options['rotator_speed'];
+
+		if($itemInterval == NULL)
+			$itemInterval = $defaultItemInterval;
+
+		echo'<script>';
+		echo'var itemInterval = ' . $itemInterval . ';';
+		echo'</script>';
 	endif;
 }
 add_action('wp_footer', 'tabular_code'); 
