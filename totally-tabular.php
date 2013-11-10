@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Totally Tabular
-Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
-Description: Aiming to Increase Usability through responsive tabbed-regions & drop-down-menus.
-Version: 0.1
+Plugin URI: http://dabzo.com/totally-tabular
+Description: Responsive Tabbed Widgets - Aiming to Increase Usability through responsive tabbed-regions & drop-down-menus.
+Version: 1.00
 Author: Adam McFadyen
 Author URI: http://dabzo.com 
 License: GPL2
@@ -28,6 +28,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ReadMe: Use [tabular] shortcode to include widgets added to the Tabbed-Sidebar in your WordPress theme. 
 Tabs will cycle automatically & are clickable.
 */
+
 function tabular_sidebar(){
   register_sidebar( array(
     'name' => __( 'Tabular Sidebar', 'dabzo' ),

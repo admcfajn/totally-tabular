@@ -1,9 +1,8 @@
-
+/* jQuery rotator courtesy of Brian McNitt @mcnitt - Modified with care by Adam McFadyen @ www.dabzo.com*/
 (function($){ // Closure to avoid jQuery conflicts
 $(window).load(function() { //start after HTML, images have loaded
 
 $('.tab-widget .tab-content').hide(); //hide all items
-
 var InfiniteRotator =
 {
   init: function()
@@ -17,7 +16,7 @@ var InfiniteRotator =
 	var verticalPadding = 120; //a little wiggle-room
 
 	var titleWidth = (100 / numberOfItems - 4) + '%'; //container-width minus 2% padding on either side
-	$('.tab-title').css('width', titleWidth);
+	$('.tab-title').css('width', titleWidth); //assign tab-title widths (100/numberOfItems-padding)
 	
     //show first item
     $('.tab-widget .tab-title').eq(currentItem).toggleClass('current-item');
@@ -52,5 +51,6 @@ var InfiniteRotator =
 };
 
 InfiniteRotator.init();
+
 });     
 })(jQuery);
