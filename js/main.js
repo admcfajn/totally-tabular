@@ -19,7 +19,7 @@ var InfiniteRotator =
 	$('.tab-title').css('width', titleWidth); //assign tab-title widths (100/numberOfItems-padding)
 	
     //show first item
-    $('.tab-widget .tab-title').eq(currentItem).toggleClass('current-item');
+    $('.tab-widget .tab-title').eq(currentItem).addClass('current-item');
     $('#tab-container').height($('.tab-widget .tab-content').eq(currentItem).height() + verticalPadding);        
     $('.tab-widget .tab-content').eq(currentItem).fadeIn(fadeTime);
 
@@ -34,16 +34,16 @@ var InfiniteRotator =
       }
       
       $('.tab-widget .tab-title').removeClass('current-item');
-      $('.tab-widget .tab-title').eq(currentItem).toggleClass('current-item');
+      $('.tab-widget .tab-title').eq(currentItem).addClass('current-item');
       $('#tab-container').height($('.tab-widget .tab-content').eq(currentItem).height() + verticalPadding).fadeIn(fadeTime);        
       $('.tab-widget .tab-content').eq(currentItem).fadeIn(fadeTime);
 
       $('.tab-title').click(function(){
         $('.tab-widget .tab-title').removeClass('current-item');
         $(this).addClass('current-item');
-        $('.tab-widget .tab-content').fadeOut(fadeTime);
+        $('.tab-widget .tab-content').hide();
         $('#tab-container').height($(this).next('.tab-content').height() + verticalPadding).fadeIn(fadeTime);
-        $(this).next('.tab-content').fadeIn(fadeTime);
+        $(this).next('.tab-content').show();
         clearInterval(infiniteLoop);
       }); 
     }, itemInterval);
