@@ -40,7 +40,7 @@ var InfiniteRotator =
 
       $('.tab-title').click(function(){
         $('.tab-widget .tab-title').removeClass('current-item');
-        $(this).toggleClass('current-item');
+        $(this).addClass('current-item');
         $('.tab-widget .tab-content').fadeOut(fadeTime);
         $('#tab-container').height($(this).next('.tab-content').height() + verticalPadding).fadeIn(fadeTime);
         $(this).next('.tab-content').fadeIn(fadeTime);
