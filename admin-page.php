@@ -26,6 +26,8 @@ add_settings_section('rotator_section', 'Rotator Settings', 'section_cb', __FILE
 
 //Fields
 add_settings_field('rotator_speed', 'Rotator Speed (ms, default 5000) :', 'rotator_speed_settings', __FILE__, 'rotator_section');
+/*add_settings_field('style_choice', 'Style Choice :', 'style_settings', __FILE__, 'rotator_section');
+*/
 }
 
 // Sanitize
@@ -35,5 +37,17 @@ function section_cb() {}
 
 //Field Output
 function rotator_speed_settings() {$options = get_option('ttabular_settings'); echo "<input name='ttabular_settings[rotator_speed]' type='text' value='{$options['rotator_speed']}' />";}
+/*
+function style_settings() {$options = get_option('ttabular_settings'); echo "<select name='ttabular_settings[style_choice]' type='text' default='{$options['style_choice']}'><option>a</option><option>b</option></select>";}
+
+// Retrieves the option using get_option(); and assigns it to a variable.
+$[VARIABLE] = get_option('[NAME]');
+    // Checks to see if variable is empty. Ex: not yet defined by the users.
+	if(empty($[VARIABLE])){
+        // If it is empty assign it your default value true or false.
+		$[VARIABLE] = "[FALSE/TRUE]";
+	}
+	*/
+?>
 
 ?>

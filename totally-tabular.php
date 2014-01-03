@@ -46,7 +46,7 @@ add_action('init', 'tabular_sidebar');
 
 function tabular_code(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
-		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . plugins_url('/css/style.css' , __FILE__) . "' />";
+		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . plugins_url('/css/vertical-style.css' , __FILE__) . "' />";
 		
 		$options = get_option('ttabular_settings'); 
 		$defaultItemInterval = "5000";
