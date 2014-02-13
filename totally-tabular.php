@@ -46,7 +46,6 @@ add_action('init', 'tabular_sidebar');
 
 function tabular_code(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
-		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . plugins_url('/css/vertical-style.css' , __FILE__) . "' />";
 		
 		$options = get_option('ttabular_settings'); 
 		$defaultItemInterval = "5000";
@@ -63,11 +62,8 @@ function tabular_code(){
 add_action('wp_footer', 'tabular_code'); 
 
 function my_scripts_method() {
-	wp_enqueue_script(
-		'custom-script',
-		plugins_url('/js/main.js' , __FILE__),
-		array( 'jquery' )
-	);
+	wp_enqueue_script('ttabular-main', plugins_url('/js/main.js' , __FILE__), array( 'jquery' ) ); 
+	wp_enqueue_style('ttabular-style', plugins_url('/css/style.css' , __FILE__) ); 
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 

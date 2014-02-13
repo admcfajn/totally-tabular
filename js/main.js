@@ -11,7 +11,7 @@ var InfiniteRotator =
  //   var itemInterval = 3000; //interval between items (in milliseconds)
     var fadeTime = 500; //cross-fade time (in milliseconds)
 
-    var numberOfItems = $('#tab-container:first-child .tab-widget').length; //count number of items
+    var numberOfItems = $('#tab-container .tab-widget').length; //count number of items
     var currentItem = 0; //set current item
 	var verticalPadding = 120; //a little wiggle-room
 
