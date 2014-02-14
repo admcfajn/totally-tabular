@@ -48,5 +48,3 @@ $[VARIABLE] = get_option('[NAME]');
 		$[VARIABLE] = "[FALSE/TRUE]";
 	}
 	*/
-
-?>

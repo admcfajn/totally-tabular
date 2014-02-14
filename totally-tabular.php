@@ -46,7 +46,8 @@ add_action('init', 'tabular_sidebar');
 
 function tabular_code(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
-		
+		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . plugins_url('/css/style.css' , __FILE__) . "' />";
+	
 		$options = get_option('ttabular_settings'); 
 		$defaultItemInterval = "5000";
 		$itemInterval = $options['rotator_speed'];
@@ -62,9 +63,18 @@ function tabular_code(){
 add_action('wp_footer', 'tabular_code'); 
 
 function my_scripts_method() {
-	wp_enqueue_script('ttabular-main', plugins_url('/js/main.js' , __FILE__), array( 'jquery' ) ); 
-	wp_enqueue_style('ttabular-style', plugins_url('/css/style.css' , __FILE__) ); 
+	wp_enqueue_script(
+		'ttabular-main',
+		plugins_url('/js/main.js' , __FILE__),
+		array( 'jquery' )
+	);
+	wp_enqueue_style(
+		'ttabular-style',
+		plugins_url('/css/style.css' , __FILE__),
+		array( 'style' )
+	);
 }
+//remove_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 function format_tabular_widgets( $title ) {	
@@ -74,11 +84,13 @@ function format_tabular_widgets( $title ) {
 
 function tabular_shortcode_output(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
+	ob_start();
 		echo'<div id="tab-container" class="widget-area rotator-tab-section">';
 		add_filter ( 'widget_title', 'format_tabular_widgets' );
 		dynamic_sidebar( 'tabbed-sidebar' );
 		remove_filter ( 'widget_title', 'format_tabular_widgets' );
 		echo'</div>';
+	return ob_get_clean();		
 	endif;
 }
 
@@ -88,4 +100,3 @@ function show_tabs( $atts ){
 }
 add_shortcode( 'tabular', 'show_tabs' );
 
-?>

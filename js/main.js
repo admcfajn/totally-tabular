@@ -11,10 +11,12 @@ var InfiniteRotator =
  //   var itemInterval = 3000; //interval between items (in milliseconds)
     var fadeTime = 500; //cross-fade time (in milliseconds)
 
-    var numberOfItems = $('#tab-container .tab-widget').length; //count number of items
-    var currentItem = 0; //set current item
-	var verticalPadding = 120; //a little wiggle-room
+    var numberOfContainers = $('.tab-widget').length; //count number of items
 
+    var numberOfItems = $('.widget-area .tab-widget').length; //count number of items
+    var currentItem = 0; //set current item
+    var verticalPadding = 120; //a little wiggle-room
+    
 	var titleWidth = (100 / numberOfItems - 4) + '%'; //container-width minus 2% padding on either side
 	$('.tab-title').css('width', titleWidth); //assign tab-title widths (100/numberOfItems-padding)
 	
@@ -23,6 +25,15 @@ var InfiniteRotator =
     $('#tab-container').height($('.tab-widget .tab-content').eq(currentItem).height() + verticalPadding);        
     $('.tab-widget .tab-content').eq(currentItem).fadeIn(fadeTime);
 
+  $('.tab-title').click(function(){
+	$('.tab-widget .tab-title').removeClass('current-item');
+	$(this).addClass('current-item');
+	$('.tab-widget .tab-content').hide();
+	$('#tab-container').height($(this).next('.tab-content').height() + verticalPadding).fadeIn(fadeTime);
+	$(this).next('.tab-content').show();
+	clearInterval(infiniteLoop);
+  }); 
+	
     //loop through the items
     var infiniteLoop = setInterval(function(){
       $('.tab-widget .tab-content').eq(currentItem).hide();
@@ -38,14 +49,6 @@ var InfiniteRotator =
       $('#tab-container').height($('.tab-widget .tab-content').eq(currentItem).height() + verticalPadding).fadeIn(fadeTime);        
       $('.tab-widget .tab-content').eq(currentItem).fadeIn(fadeTime);
 
-      $('.tab-title').click(function(){
-        $('.tab-widget .tab-title').removeClass('current-item');
-        $(this).addClass('current-item');
-        $('.tab-widget .tab-content').hide();
-        $('#tab-container').height($(this).next('.tab-content').height() + verticalPadding).fadeIn(fadeTime);
-        $(this).next('.tab-content').show();
-        clearInterval(infiniteLoop);
-      }); 
     }, itemInterval);
   }
 };

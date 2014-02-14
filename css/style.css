@@ -1,18 +1,17 @@
 /* These styles are brought to you courtesy of Adam McFadyen @ www.dabzo.com */
 #tab-container{
+	float:left;
+	position:relative;
 	
-	position:static;
-	display:block;
-
+	width:100%;
 	margin:1em auto;
 
 	background:#e8e8e8;
-	box-shadow: inset 0 0 1px #515151; 
+	box-shadow: inset 0 0 1px #515151;
 }
-
 .tab-title{
-
-	position:static;
+	float:left;
+	position:relative;
 	clear:none;
 	display:block;
 	
@@ -27,18 +26,18 @@
 	font-family: 'Arial', 'Helvetica', Sans-serif, sans;
 	text-transform:uppercase;
 	text-align: center;
-	z-index:100;	
+	/*z-index:100;	*/
 }   
 .tab-title:hover{
 	background:#e8e8e8;
 	color:#003169;	
 } 
 .tab-content{
-	position:static;
+	position:absolute;
 	top:40px;
 	display:none;	
 	
-
+	width:96%;	
 	padding: 20px 2%;
 	
 	background:#f8f8f8;
@@ -47,7 +46,8 @@
 	font-size:16px;
 	text-shadow: 0 0 2px #fcfcfc;
 	box-shadow: inset 0 0 1px #ccf;
-	z-index:80;
+	/*
+	z-index:80;*/
 }
 .tab-widget .current-item{
 	background:#003169;
