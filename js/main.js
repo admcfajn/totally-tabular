@@ -11,13 +11,13 @@ var InfiniteRotator =
  //   var itemInterval = 3000; //interval between items (in milliseconds)
     var fadeTime = 500; //cross-fade time (in milliseconds)
 
-    var numberOfContainers = $('.tab-widget').length; //count number of items
+    var numberOfContainers = $('.rotator-tab-section').length; //count number of items
 
     var numberOfItems = $('.widget-area .tab-widget').length; //count number of items
     var currentItem = 0; //set current item
     var verticalPadding = 120; //a little wiggle-room
     
-	var titleWidth = (100 / numberOfItems - 4) + '%'; //container-width minus 2% padding on either side
+	var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
 	$('.tab-title').css('width', titleWidth); //assign tab-title widths (100/numberOfItems-padding)
 	
     //show first item
