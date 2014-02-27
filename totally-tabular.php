@@ -10,8 +10,6 @@ License: GPL2
 
 Copyright 2013 Adam McFadyen  (email : adam@dabzo.com)
 
-This is my first WordPress plugin. I've been building WordPress-sites for 5 years now.
-
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License, version 2, as 
 published by the Free Software Foundation.
@@ -46,8 +44,6 @@ add_action('init', 'tabular_sidebar');
 
 function tabular_code(){
 	if ( is_active_sidebar( 'tabbed-sidebar' ) ) :
-		echo"<link rel='stylesheet' id='totally-tabular-css' href='" . plugins_url('/css/style.css' , __FILE__) . "' />";
-	
 		$options = get_option('ttabular_settings'); 
 		$defaultItemInterval = "5000";
 		$itemInterval = $options['rotator_speed'];
@@ -70,8 +66,7 @@ function my_scripts_method() {
 	);
 	wp_enqueue_style(
 		'ttabular-style',
-		plugins_url('/css/style.css' , __FILE__),
-		array( 'style' )
+		plugins_url('/css/style.css' , __FILE__)
 	);
 }
 //remove_action( 'wp_enqueue_scripts', 'my_scripts_method' );

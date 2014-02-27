@@ -2,12 +2,16 @@
 #tab-container{
 	float:left;
 	position:relative;
+	clear:both;
 	
 	width:100%;
 	margin:1em auto;
 
+	padding-bottom:56px;
+	font-size:1em;
 	background:#e8e8e8;
 	box-shadow: inset 0 0 1px #515151;
+	/*border:1px solid #f00;*/
 }
 .tab-title{
 	float:left;
@@ -16,17 +20,20 @@
 	display:block;
 	
 	width:auto;
-	line-height:40px;
-	height:40px;
+	line-height:24px;
+	height:24px;
 	padding:0 2%;
 	
 	background:#55c;
 	color:#fff;
-	font-size:18px;
+	overflow:hidden;
+
+	font-size: 16px;
+	font-weight: normal;
 	font-family: 'Arial', 'Helvetica', Sans-serif, sans;
-	text-transform:uppercase;
 	text-align: center;
-	/*z-index:100;	*/
+	text-transform:uppercase;
+	/*z-index:100;text-transform:uppercase;	*/
 }   
 .tab-title:hover{
 	background:#e8e8e8;
@@ -34,11 +41,12 @@
 } 
 .tab-content{
 	position:absolute;
-	top:40px;
+	top:24px;
 	display:none;	
 	
 	width:96%;	
-	padding: 20px 2%;
+	padding: 16px 2%;
+	/*border:1px solid #00f;*/
 	
 	background:#f8f8f8;
 	background-image: linear-gradient(top, #efefef, #fcfcfc);
@@ -46,8 +54,6 @@
 	font-size:16px;
 	text-shadow: 0 0 2px #fcfcfc;
 	box-shadow: inset 0 0 1px #ccf;
-	/*
-	z-index:80;*/
 }
 .tab-widget .current-item{
 	background:#003169;
@@ -57,3 +63,19 @@
 .tab-visible{
 	display:block;
 } 
+
+/* Minimum width of 600 pixels. */
+@media screen and (min-width: 600px) {
+	#tab-container{
+		padding-bottom:72px;
+	}
+	.tab-title{
+		line-height:32px;
+		height:32px;
+		font-size: 20px;
+	}   
+	.tab-content{
+		top:32px;
+		padding: 20px 2%;
+	}
+}
