@@ -2,7 +2,7 @@
 (function($){ // Closure to avoid jQuery conflicts
 $(window).load(function() { //start after HTML, images have loaded
 
-$('.tab-widget .tab-content').hide(); //hide all items
+$('.ttab-widget .ttab-content').hide(); //hide all items
 var InfiniteRotator =
 {
   init: function()
@@ -11,30 +11,30 @@ var InfiniteRotator =
     // var itemInterval = 3000; //interval between items (in milliseconds)
     var fadeTime = 500; //cross-fade time (in milliseconds)
     var numberOfContainers = $('.rotator-tab-section').length; //count number of items
-    var numberOfItems = $('.widget-area .tab-widget').length; //count number of items
+    var numberOfItems = $('.widget-area .ttab-widget').length; //count number of items
     var currentItem = 0; //set current item
     
   	var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
-  	$('.tab-title').css('width', titleWidth); //assign tab-title widths (100/numberOfItems-padding)
+  	$('.ttab-title').css('width', titleWidth); //assign ttab-title widths (100/numberOfItems-padding)
   	
     //show first item
-    $('.tab-widget .tab-title').eq(currentItem).addClass('current-item');
-    $('#tab-container').height($('.tab-widget .tab-content').eq(currentItem).height());        
-    $('.tab-widget .tab-content').eq(currentItem).fadeIn(fadeTime);
+    $('.ttab-widget .ttab-title').eq(currentItem).addClass('current-item');
+    $('#ttab-container').height($('.ttab-widget .ttab-content').eq(currentItem).height());        
+    $('.ttab-widget .ttab-content').eq(currentItem).fadeIn(fadeTime);
 
-    $('.tab-title').click(function(){
-    	$('.tab-widget .tab-title').removeClass('current-item');
+    $('.ttab-title').click(function(){
+    	$('.ttab-widget .ttab-title').removeClass('current-item');
     	$(this).addClass('current-item');
-    	$('.tab-widget .tab-content').hide();
-    	$('#tab-container').height($(this).next('.tab-content').height()).fadeIn(fadeTime);
-    	$(this).next('.tab-content').show();
+    	$('.ttab-widget .ttab-content').hide();
+    	$('#ttab-container').height($(this).next('.ttab-content').height()).fadeIn(fadeTime);
+    	$(this).next('.ttab-content').show();
 
     	clearInterval(infiniteLoop);
     }); 
 	
     //loop through the items
     var infiniteLoop = setInterval(function(){
-      $('.tab-widget .tab-content').eq(currentItem).hide();
+      $('.ttab-widget .ttab-content').eq(currentItem).hide();
       
       if(currentItem == numberOfItems -1){
         currentItem = 0;
@@ -42,10 +42,10 @@ var InfiniteRotator =
         currentItem++;
       }
       
-      $('.tab-widget .tab-title').removeClass('current-item');
-      $('.tab-widget .tab-title').eq(currentItem).addClass('current-item');
-      $('#tab-container').height($('.tab-widget .tab-content').eq(currentItem).height()).fadeIn(fadeTime);        
-      $('.tab-widget .tab-content').eq(currentItem).fadeIn(fadeTime);
+      $('.ttab-widget .ttab-title').removeClass('current-item');
+      $('.ttab-widget .ttab-title').eq(currentItem).addClass('current-item');
+      $('#ttab-container').height($('.ttab-widget .ttab-content').eq(currentItem).height()).fadeIn(fadeTime);        
+      $('.ttab-widget .ttab-content').eq(currentItem).fadeIn(fadeTime);
 
     }, itemInterval);
   }
