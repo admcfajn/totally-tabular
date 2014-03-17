@@ -10,8 +10,7 @@
 	padding-bottom:56px;
 	font-size:1em;
 	background:#e8e8e8;
-	box-shadow: inset 0 0 1px #515151;
-	/*border:1px solid #f00;*/
+	box-shadow: inset 0 0 1px #515151; 
 }
 .ttab-title{
 	float:left;
@@ -33,7 +32,6 @@
 	font-family: 'Arial', 'Helvetica', Sans-serif, sans;
 	text-align: center;
 	text-transform:uppercase;
-	/*z-index:100;text-transform:uppercase;	*/
 }   
 .ttab-title:hover{
 	background:#e8e8e8;
@@ -46,7 +44,6 @@
 	
 	width:96%;	
 	padding: 16px 2%;
-	/*border:1px solid #00f;*/
 	
 	background:#f8f8f8;
 	background-image: linear-gradient(top, #efefef, #fcfcfc);

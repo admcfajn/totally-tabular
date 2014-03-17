@@ -69,7 +69,6 @@ function my_scripts_method() {
 		plugins_url('/css/style.css' , __FILE__)
 	);
 }
-//remove_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 function format_tabular_widgets( $title ) {	
