@@ -46,7 +46,7 @@ function ttabular_get_options(){
 	$options = get_option('ttabular_settings');
 	return $options;
 } 
-
+/*
 function tabular_code(){
 	if ( is_active_sidebar( 'ttabular-sidebar' ) ) :
 		$options = ttabular_get_options();
@@ -58,21 +58,18 @@ function tabular_code(){
 	endif;
 }
 add_action('wp_footer', 'tabular_code'); 
-
+*/
 function ttabular_scripts_method() {
 	$options = ttabular_get_options();
-	$itemInterval = $options['rotator_speed'];
-	//if ($itemInterval == 4000){ //testing get_option within functions
-		wp_enqueue_script(
-			'ttabular-main',
-			plugins_url('/js/main.js' , __FILE__),
-			array( 'jquery' )
-		);
-		wp_enqueue_style(
-			'ttabular-style',
-			plugins_url('/css/style.css' , __FILE__)
-		);
-	//}
+	($options['rotator_speed'] ? $itemInterval = $options['rotator_speed'] : $itemInterval = "5000");
+
+	wp_register_script( 'ttabular-main', plugins_url('/js/main.js' , __FILE__ ), array( 'jquery' ), null );
+	$optionsData = array(
+		'itemInterval' => $itemInterval
+	);
+	wp_localize_script( 'ttabular-main', 'optionsData', $optionsData );
+	wp_enqueue_script( 'ttabular-main' );
+	wp_enqueue_style( 'ttabular-style', plugins_url('/css/style.css' , __FILE__ ) );
 }
 add_action( 'wp_enqueue_scripts', 'ttabular_scripts_method' );
 
