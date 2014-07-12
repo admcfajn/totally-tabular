@@ -1,14 +1,17 @@
 /* jQuery rotator courtesy of Brian McNitt @mcnitt - Modified by Adam McFadyen @ajmcfadyen */
 (function($){ // Closure to avoid jQuery conflicts
 $(window).load(function() { //start after HTML, images have loaded
+
 var itemInterval = optionsData.itemInterval;
+
 $('.ttab-widget .ttab-content').hide(); //hide all items
+
 var InfiniteRotator =
 {
   init: function()
   {
     var initialFadeIn = 0; //initial fade-in time (in milliseconds)
-    
+
     // var itemInterval = 3000; //interval between items (in milliseconds)
     var fadeTime = 500; //cross-fade time (in milliseconds)
     var numberOfContainers = $('.rotator-tab-section').length; //count number of items
