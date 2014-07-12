@@ -4,7 +4,7 @@ add_action('admin_menu', 'create_theme_options_page');
 function create_theme_options_page(){  add_options_page('Totally Tabular', 'Totally Tabular', 'administrator', __FILE__, 'build_options_page');}
 
 function build_options_page() {?> 
-	<div id="theme-options-wrap"><style>input{padding:3px 1px;width:120px;}.form-table{width:98%;}.form-table tr{width:80%;max-width:400px;float:left;display:block;min-height:60px;padding:0}.form-table td{padding:0 2px}.form-table th{padding:6px 6px 0 2px;text-align:right}</style>
+	<div id="theme-options-wrap"><style>input{padding:3px 1px;width:220px;}.form-table{width:98%;}.form-table tr{width:80%;max-width:400px;float:left;display:block;min-height:60px;padding:0}.form-table td{padding:0 2px}.form-table th{padding:6px 6px 0 2px;text-align:right}</style>
 		<div class="icon32" id="icon-tools"> <br /> </div>    
 		<h2>Totally Tabular Settings</h2>
 		
@@ -25,7 +25,7 @@ function register_and_build_fields() {  register_setting('ttabular_settings', 't
 add_settings_section('rotator_section', 'Rotator Settings', 'section_cb', __FILE__);
 
 //Fields
-add_settings_field('rotator_speed', 'Rotator Speed (ms, default 5000) :', 'rotator_speed_settings', __FILE__, 'rotator_section');
+add_settings_field('rotator_speed', 'Rotator Speed : <br />(milliseconds, default 5000)', 'rotator_speed_settings', __FILE__, 'rotator_section');
 /*add_settings_field('style_choice', 'Style Choice :', 'style_settings', __FILE__, 'rotator_section');
 */
 }
