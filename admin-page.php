@@ -1,10 +1,11 @@
 <?php
 
-add_action('admin_menu', 'create_theme_options_page');
-function create_theme_options_page(){  add_options_page('Totally Tabular', 'Totally Tabular', 'administrator', __FILE__, 'build_options_page');}
+add_action('admin_menu', 'ttabular_create_theme_options_page');
+function ttabular_create_theme_options_page(){  add_options_page('Totally Tabular', 'Totally Tabular', 'administrator', __FILE__, 'ttabular_build_options_page');}
 
-function build_options_page() {?> 
-	<div id="theme-options-wrap"><style>input{padding:3px 1px;width:220px;}.form-table{width:98%;}.form-table tr{width:80%;max-width:400px;float:left;display:block;min-height:60px;padding:0}.form-table td{padding:0 2px}.form-table th{padding:6px 6px 0 2px;text-align:right}</style>
+function ttabular_build_options_page() {?> 
+	<div id="theme-options-wrap">
+
 		<div class="icon32" id="icon-tools"> <br /> </div>    
 		<h2>Totally Tabular Settings</h2>
 		
@@ -18,25 +19,38 @@ function build_options_page() {?>
 		</form>
 	</div>
 <?php }
-add_action('admin_init', 'register_and_build_fields');
-function register_and_build_fields() {  register_setting('ttabular_settings', 'ttabular_settings', 'validate_setting');
+add_action('admin_init', 'ttabular_register_and_build_fields');
+function ttabular_register_and_build_fields() {  register_setting('ttabular_settings', 'ttabular_settings', 'validate_setting');
 
 // Sections
-add_settings_section('rotator_section', 'Rotator Settings', 'section_cb', __FILE__);
+add_settings_section('rotator_section', 'Rotator Settings', 'ttabular_rotator_section_cb', __FILE__);
 
 //Fields
 add_settings_field('rotator_speed', 'Rotator Speed : <br />(milliseconds, default 5000)', 'rotator_speed_settings', __FILE__, 'rotator_section');
+add_settings_field('layout_type', 'Layout Type : <br />(horizontal or vertical)', 'layout_type_settings', __FILE__, 'rotator_section');
 /*add_settings_field('style_choice', 'Style Choice :', 'style_settings', __FILE__, 'rotator_section');
 */
 }
 
 // Sanitize
 function validate_setting($ttabular_settings) {return $ttabular_settings;}
-// Define section_cb() to avoid function undefined error
-function section_cb() {} 
+// Define ttabular_rotator_section_cb() to avoid function undefined error
+function ttabular_rotator_section_cb() {} 
 
 //Field Output
 function rotator_speed_settings() {$options = get_option('ttabular_settings'); echo "<input name='ttabular_settings[rotator_speed]' type='text' value='{$options['rotator_speed']}' />";}
+
+function layout_type_settings() {
+	$layout_options = ['horizontal','vertical'];
+	$options = get_option('ttabular_settings'); 
+	echo "<select name='ttabular_settings[layout_type]'>";
+	foreach ($layout_options as $key) {
+		echo "<option value='".$key."' ";
+		echo ( $key == $options['layout_type'] ? "selected='selected'" : '');
+		echo " >".$key."</option>";
+		# code...
+	}
+	echo "</select>";}
 /*
 function style_settings() {$options = get_option('ttabular_settings'); echo "<select name='ttabular_settings[style_choice]' type='text' default='{$options['style_choice']}'><option>a</option><option>b</option></select>";}
 

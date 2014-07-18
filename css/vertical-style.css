@@ -1,5 +1,6 @@
 /* These styles are brought to you courtesy of Adam McFadyen @ www.dabzo.com */
 #ttab-container{
+
 	float:left;
 	position:relative;
 	clear:both;
@@ -15,14 +16,16 @@
 .ttab-title{
 	float:left;
 	position:relative;
-	clear:none;
+	clear:right;
 	display:block;
 	
-	width:auto;
+	width:26%;
 	line-height:24px;
 	height:24px;
 	padding:0 2%;
-	
+	margin:0;
+	margin-right:70%;
+		
 	background:#55c;
 	color:#fff;
 	overflow:hidden;
@@ -39,10 +42,11 @@
 } 
 .ttab-content{
 	position:absolute;
-	top:24px;
+	top:0;
+	right:0;
 	display:none;	
 	
-	width:96%;	
+	width:66%;	
 	padding: 16px 2%;
 	
 	background:#f8f8f8;
@@ -72,7 +76,6 @@
 		font-size: 20px;
 	}   
 	.ttab-content{
-		top:32px;
 		padding: 20px 2%;
 	}
 }

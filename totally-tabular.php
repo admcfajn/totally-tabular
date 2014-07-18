@@ -65,11 +65,17 @@ function ttabular_scripts_method() {
 
 	wp_register_script( 'ttabular-main', plugins_url('/js/main.js' , __FILE__ ), array( 'jquery' ), null );
 	$optionsData = array(
-		'itemInterval' => $itemInterval
+		'itemInterval' => $itemInterval,
+		'layoutOption' => $layoutOption
 	);
 	wp_localize_script( 'ttabular-main', 'optionsData', $optionsData );
-	wp_enqueue_script( 'ttabular-main' );
-	wp_enqueue_style( 'ttabular-style', plugins_url('/css/style.css' , __FILE__ ) );
+	wp_enqueue_script( 'ttabular-main' );	
+
+	if($options['layout_type']=='vertical'):
+		wp_enqueue_style( 'ttabular-style', plugins_url('/css/vertical-style.css' , __FILE__ ) );
+	else:
+		wp_enqueue_style( 'ttabular-style', plugins_url('/css/style.css' , __FILE__ ) );
+	endif;
 }
 add_action( 'wp_enqueue_scripts', 'ttabular_scripts_method' );
 
