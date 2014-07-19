@@ -1,35 +1,4 @@
 /* These styles are brought to you courtesy of Adam McFadyen @ www.dabzo.com */
-
-/*Note: USE @import top right bottom left, fixed / inline / colour - within styles via case switch in tabular.php : 
-
-
-vertical.css
-vertical-right.css
-fixed.css
-fixed-left.css
-
-
-enque vertical-right-fixed.css
-(align-right-fixed) - maybe swap fixed and vertical order to keep one with fewer options higher in nomenclature.
-
-user selects:
-
-vertical layout, right align, fixed-left position;
-enque: vertical-right-fixed-left.css;
-
-
----vertical-right-fixed-left.css---
-
-	@import@(url:vertical.css);
-	@import@(url:vertical-right.css);
-	@import@(url:fixed.css);
-	@import@(url:fixed-left.css);
-
----END vertical-right-fixed-left.css---
-
-Exaple: ;  ;*/
-
-
 #ttab-container{
 	float:left;
 	position:relative;
