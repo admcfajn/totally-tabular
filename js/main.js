@@ -4,7 +4,8 @@ $(window).load(function() { //start after HTML, images have loaded
 
 var itemInterval = optionsData.itemInterval;
 var layoutOption = optionsData.layoutOption;
-
+// alert(layoutOption);
+// alert(itemInterval);
 $('.ttab-widget .ttab-content').hide(); //hide all items
 
 var InfiniteRotator =

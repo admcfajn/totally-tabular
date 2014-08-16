@@ -8,7 +8,7 @@
 	width:100%;
 	margin:1em auto;
 
-	padding-bottom:56px;
+	padding-bottom:32px;
 	font-size:1em;
 	background:#e8e8e8;
 	box-shadow: inset 0 0 1px #515151; 
@@ -68,7 +68,7 @@
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
 	#ttab-container{
-		padding-bottom:72px;
+		padding-bottom:40px;
 	}
 	.ttab-title{
 		line-height:32px;

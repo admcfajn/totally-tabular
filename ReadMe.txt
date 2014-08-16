@@ -1,4 +1,4 @@
-Totally Tabular - Responsive Tabbed Widget WordPress plugin
+﻿Totally Tabular - Responsive Tabbed Widget WordPress plugin
 
 Installation Guide:
 
@@ -6,6 +6,7 @@ Installation Guide:
 	2. Visit Appearance >> Widgets & Add widgets to 'Tabular Sidebar'
 	3. Use [tabular] shortcode Tabular-Sidebar in your WordPress theme, posts or pages.
 	4. Tabs will cycle automatically & switch between tabs when clicked.
+	5. Visit: Settings >> Totally Tabular to change speed & layout settings
 	
 Future Releases to Include:
 
