@@ -87,13 +87,15 @@ function ttabular_format_widgets( $title ) {
 
 function ttabular_shortcode_output(){
 	if ( is_active_sidebar( 'ttabular-sidebar' ) ) :
-	ob_start();
-		echo'<div id="ttab-container" class="widget-area rotator-tab-section">';
-		add_filter ( 'widget_title', 'ttabular_format_widgets' );
-		dynamic_sidebar( 'ttabular-sidebar' );
-		remove_filter ( 'widget_title', 'ttabular_format_widgets' );
-		echo'</div>';
-	return ob_get_clean();		
+		ob_start();
+			echo'<div id="ttab-container" class="widget-area rotator-tab-section">';
+			add_filter ( 'widget_title', 'ttabular_format_widgets' );
+			dynamic_sidebar( 'ttabular-sidebar' );
+			remove_filter ( 'widget_title', 'ttabular_format_widgets' );
+			echo'</div>';
+		return ob_get_clean();		
+	else: 
+		return '* Please Add Widgets to the "Tabular Sidebar" *';	
 	endif;
 }
 
