@@ -1,58 +1,81 @@
-/* These styles are brought to you courtesy of Adam McFadyen @ www.dabzo.com */
-#tab-container{
-	float:left;
-	position:relative;
-	
-	width:100%;
-	margin:1em auto;
-
-	background:#e8e8e8;
-	box-shadow: inset 0 0 1px #515151;
-}
-.tab-title{
-	float:left;
-	position:relative;
-	clear:none;
-	display:block;
-	
-	width:auto;
-	line-height:40px;
-	height:40px;
-	padding:0 2%;
-	
-	background:#55c;
-	color:#fff;
-	font-size:18px;
-	font-family: 'Arial', 'Helvetica', Sans-serif, sans;
-	text-transform:uppercase;
-	text-align: center;
-	z-index:100;	
-}   
-.tab-title:hover{
-	background:#e8e8e8;
-	color:#003169;	
-} 
-.tab-content{
-	position:absolute;
-	top:40px;
-	display:none;	
-	
-	width:96%;	
-	padding: 20px 2%;
-	
-	background:#f8f8f8;
-	background-image: linear-gradient(top, #efefef, #fcfcfc);
-	color:#222;	
-	font-size:16px;
-	text-shadow: 0 0 2px #fcfcfc;
-	box-shadow: inset 0 0 1px #ccf;
-	z-index:80;
-}
-.tab-widget .current-item{
-	background:#003169;
-	background-image: linear-gradient(top, #013d79, #002559);
-	color:#fff;
-}
-.tab-visible{
-	display:block;
-} 
+/* These styles are brought to you courtesy of Adam McFadyen @ www.dabzo.com */
+#ttab-container{
+
+	float:left;
+	position:relative;
+	clear:both;
+	
+	width:100%;
+	margin:1em auto;
+
+	padding-bottom:32px;
+	font-size:1em;
+	background:#e8e8e8;
+	box-shadow: inset 0 0 1px #515151; 
+}
+.ttab-title{
+	float:left;
+	position:relative;
+	clear:right;
+	display:block;
+	
+	width:26%;
+	line-height:24px;
+	height:24px;
+	padding:0 2%;
+	margin:0;
+	margin-right:70%;
+		
+	background:#55c;
+	color:#fff;
+	overflow:hidden;
+
+	font-size: 16px;
+	font-weight: normal;
+	font-family: 'Arial', 'Helvetica', Sans-serif, sans;
+	text-align: center;
+	text-transform:uppercase;
+}   
+.ttab-title:hover{
+	background:#e8e8e8;
+	color:#003169;	
+} 
+.ttab-content{
+	position:absolute;
+	top:0;
+	right:0;
+	display:none;	
+	
+	width:66%;	
+	padding: 16px 2%;
+	
+	background:#f8f8f8;
+	background-image: linear-gradient(top, #efefef, #fcfcfc);
+	color:#222;	
+	font-size:16px;
+	text-shadow: 0 0 2px #fcfcfc;
+	box-shadow: inset 0 0 1px #ccf;
+}
+.ttab-widget .current-item{
+	background:#003169;
+	background-image: linear-gradient(top, #013d79, #002559);
+	color:#fff;
+}
+.ttab-visible{
+	display:block;
+} 
+
+/* Minimum width of 600 pixels. */
+@media screen and (min-width: 600px) {
+	#ttab-container{
+		padding-bottom:40px;
+	}
+	.ttab-title{
+		line-height:32px;
+		height:32px;
+		font-size: 20px;
+	}   
+	.ttab-content{
+		padding: 20px 2%;
+	}
+}

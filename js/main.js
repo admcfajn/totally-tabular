@@ -2,36 +2,44 @@
 (function($){ // Closure to avoid jQuery conflicts
 $(window).load(function() { //start after HTML, images have loaded
 
+var itemInterval = optionsData.itemInterval;
+var layoutOption = optionsData.layoutOption;
+// alert(layoutOption);
+// alert(itemInterval);
 $('.ttab-widget .ttab-content').hide(); //hide all items
+
 var InfiniteRotator =
 {
   init: function()
   {
     var initialFadeIn = 0; //initial fade-in time (in milliseconds)
+
     // var itemInterval = 3000; //interval between items (in milliseconds)
     var fadeTime = 500; //cross-fade time (in milliseconds)
     var numberOfContainers = $('.rotator-tab-section').length; //count number of items
     var numberOfItems = $('.widget-area .ttab-widget').length; //count number of items
     var currentItem = 0; //set current item
     
-  	var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
-  	$('.ttab-title').css('width', titleWidth); //assign ttab-title widths (100/numberOfItems-padding)
-  	
+    if(layoutOption=='horizontal'){
+      var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
+      $('.ttab-title').css('width', titleWidth); //assign ttab-title widths (100/numberOfItems-padding)
+    }
+    
     //show first item
     $('.ttab-widget .ttab-title').eq(currentItem).addClass('current-item');
     $('#ttab-container').height($('.ttab-widget .ttab-content').eq(currentItem).height());        
     $('.ttab-widget .ttab-content').eq(currentItem).fadeIn(fadeTime);
 
     $('.ttab-title').click(function(){
-    	$('.ttab-widget .ttab-title').removeClass('current-item');
-    	$(this).addClass('current-item');
-    	$('.ttab-widget .ttab-content').hide();
-    	$('#ttab-container').height($(this).next('.ttab-content').height()).fadeIn(fadeTime);
-    	$(this).next('.ttab-content').show();
+      $('.ttab-widget .ttab-title').removeClass('current-item');
+      $(this).addClass('current-item');
+      $('.ttab-widget .ttab-content').hide();
+      $('#ttab-container').height($(this).next('.ttab-content').height()).fadeIn(fadeTime);
+      $(this).next('.ttab-content').show();
 
-    	clearInterval(infiniteLoop);
+      clearInterval(infiniteLoop);
     }); 
-	
+  
     //loop through the items
     var infiniteLoop = setInterval(function(){
       $('.ttab-widget .ttab-content').eq(currentItem).hide();
