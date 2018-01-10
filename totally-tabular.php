@@ -3,7 +3,7 @@
 Plugin Name: Totally Tabular
 Plugin URI: http://dabzo.com/totally-tabular
 Description: Responsive Tabbed Widgets - Aiming to Increase Usability through responsive tabbed-regions & drop-down-menus.
-Version: 1.00
+Version: 1.1.0
 Author: Adam McFadyen
 Author URI: http://dabzo.com 
 License: GPL2
@@ -57,26 +57,10 @@ if ( !class_exists( 'TotallyTabular_Plugin' ) ) {
 		  ) );
 		}
 
-
 		public function ttabular_get_options(){
 			$options = get_option('ttabular_settings');
 			return $options;
 		} 
-
-		/*
-
-		public function tabular_code(){
-			if ( is_active_sidebar( 'ttabular-sidebar' ) ) :
-				$options = ttabular_get_options();
-				($options['rotator_speed'] ? $itemInterval = $options['rotator_speed'] : $itemInterval = "5000");
-
-				echo'<script>';
-				echo'var itemInterval = ' . $itemInterval . ';';
-				echo'</script>';
-			endif;
-		}
-		add_action('wp_footer', 'tabular_code'); 
-		*/
 
 		public function ttabular_scripts_method() {
 			$options = TotallyTabular_Plugin::ttabular_get_options();
@@ -98,7 +82,6 @@ if ( !class_exists( 'TotallyTabular_Plugin' ) ) {
 			endif;
 		}
 
-
 		public function ttabular_format_widgets( $title ) {	
 			$title = "<span>" . $title . "</span>";
 			return $title;
@@ -117,12 +100,6 @@ if ( !class_exists( 'TotallyTabular_Plugin' ) ) {
 				return '* Please Add Widgets to the "Tabular Sidebar" *';	
 			endif;
 		}
-
-		//[tabular]
-
-		// public function show_tabs(){
-		// 	return TotallyTabular_Plugin::ttabular_shortcode_output();
-		// }
 
     }
  
