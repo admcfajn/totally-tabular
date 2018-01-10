@@ -53,10 +53,6 @@
 	text-shadow: 0 0 2px #fcfcfc;
 	box-shadow: inset 0 0 1px #ccf;
 }
-.ttab-widget{
-	width:100%;
-	float:left;border:1px solid #f00;
-}
 .ttab-widget .current-item{
 	background:#003169;
 	background-image: linear-gradient(top, #013d79, #002559);
