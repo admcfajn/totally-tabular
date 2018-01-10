@@ -1,11 +1,13 @@
-/* jQuery rotator courtesy of Brian McNitt @mcnitt - Modified by Adam McFadyen @ajmcfadyen */
+/* jQuery rotator courtesy of Brian McNitt @mcnitt - Modified by Adam McFadyen @admcfajn
+ * https://github.com/mcnitt/jquery-infinite-rotator/blob/master/js/infinite-rotator.js
+ */
 (function($){ // Closure to avoid jQuery conflicts
 $(window).load(function() { //start after HTML, images have loaded
 
-var itemInterval = optionsData.itemInterval;
-var layoutOption = optionsData.layoutOption;
-// alert(layoutOption);
-// alert(itemInterval);
+var itemInterval = ttabular_optionsData.itemInterval;
+var layoutOption = ttabular_optionsData.layoutOption;
+// console.log(layoutOption);
+// console.log(itemInterval);
 $('.ttab-widget .ttab-content').hide(); //hide all items
 
 var InfiniteRotator =
