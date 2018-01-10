@@ -30,20 +30,17 @@ Tabs will cycle automatically & are clickable.
 require_once('admin-page.php');
 
 if ( !class_exists( 'TotallyTabular_Plugin' ) ) {
-    class TotallyTabular_Plugin
-    {
+	class TotallyTabular_Plugin
+	{
 		function __construct() {
 			$this->init();
 		}
 
-        public function init() {
-            add_action('widgets_init', [$this,'ttabular_sidebar']);
-
-            add_action( 'wp_enqueue_scripts', [$this,'ttabular_scripts_method']);
-
-            // add_shortcode( 'tabular', TotallyTabular_Plugin::ttabular_shortcode_output());
-            add_shortcode( 'tabular', [$this,'ttabular_shortcode_output']);
-        }
+		public function init() {
+			add_action('widgets_init', [$this,'ttabular_sidebar']);
+			add_action( 'wp_enqueue_scripts', [$this,'ttabular_scripts_method']);
+			add_shortcode( 'tabular', [$this,'ttabular_shortcode_output']);
+		}
 
 		public function ttabular_sidebar(){
 		  register_sidebar( array(
@@ -101,9 +98,9 @@ if ( !class_exists( 'TotallyTabular_Plugin' ) ) {
 			endif;
 		}
 
-    }
+	}
  
- 	$TotallyTabular_Plugin = new TotallyTabular_Plugin;
+	$TotallyTabular_Plugin = new TotallyTabular_Plugin;
 
 }
 

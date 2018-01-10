@@ -6,13 +6,11 @@ if ( !class_exists( 'TotallyTabular_Options' ) ) {
 			$this->init();
 		}
 
-        public function init() {
-            add_action('admin_menu', [$this,'ttabular_create_theme_options_page']);
-
-            add_action('admin_init', [$this,'ttabular_register_and_build_fields']);
-        }
+		public function init() {
+			add_action('admin_menu', [$this,'ttabular_create_theme_options_page']);
+			add_action('admin_init', [$this,'ttabular_register_and_build_fields']);
+		}
  
-
 		public function ttabular_create_theme_options_page(){
 			add_options_page('Totally Tabular', 'Totally Tabular', 'administrator', __FILE__, [$this,'ttabular_build_options_page']);
 		}
