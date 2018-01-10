@@ -13,6 +13,7 @@ $('.ttab-widget .ttab-content').hide(); //hide all items
 var InfiniteRotator =
 {
   init: function()
+  // init: function(e)
   {
     var initialFadeIn = 0; //initial fade-in time (in milliseconds)
 
@@ -23,6 +24,7 @@ var InfiniteRotator =
     var currentItem = 0; //set current item
     
     if(layoutOption=='horizontal'){
+      // var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
       var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
       $('.ttab-title').css('width', titleWidth); //assign ttab-title widths (100/numberOfItems-padding)
     }
@@ -62,6 +64,9 @@ var InfiniteRotator =
 };
 
 InfiniteRotator.init();
+// $('.ttab-container').each(function(){
+//   InfiniteRotator.init($(this));
+// });
 
 });     
 })(jQuery);

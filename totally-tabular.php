@@ -27,6 +27,9 @@ ReadMe: Use [tabular] shortcode to include widgets added to the Tabbed-Sidebar i
 Tabs will cycle automatically & are clickable.
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
 require_once('admin-page.php');
 
 if ( !class_exists( 'TotallyTabular_Plugin' ) ) {
