@@ -2,8 +2,8 @@
 (function($){ // Closure to avoid jQuery conflicts
 $(window).load(function() { //start after HTML, images have loaded
 
-var itemInterval = optionsData.itemInterval;
-var layoutOption = optionsData.layoutOption;
+var itemInterval = ttabular_optionsData.itemInterval;
+var layoutOption = ttabular_optionsData.layoutOption;
 // alert(layoutOption);
 // alert(itemInterval);
 $('.ttab-widget .ttab-content').hide(); //hide all items
