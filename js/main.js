@@ -2,7 +2,7 @@
  * https://github.com/mcnitt/jquery-infinite-rotator/blob/master/js/infinite-rotator.js
  */
 (function($){ // Closure to avoid jQuery conflicts
-$(window).load(function() { //start after HTML, images have loaded
+$(document).ready(function() { //start after HTML, images have loaded
 
 var itemInterval = ttabular_optionsData.itemInterval;
 var layoutOption = ttabular_optionsData.layoutOption;
@@ -22,16 +22,16 @@ var InfiniteRotator =
     var numberOfContainers = $('.rotator-tab-section').length; //count number of items
     var numberOfItems = $('.widget-area .ttab-widget').length; //count number of items
     var currentItem = 0; //set current item
-    
+
     if(layoutOption=='horizontal'){
       // var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
       var titleWidth = (((100 / numberOfItems) * numberOfContainers) - 4) + '%'; //container-width minus 2% padding on either side
       $('.ttab-title').css('width', titleWidth); //assign ttab-title widths (100/numberOfItems-padding)
     }
-    
+
     //show first item
     $('.ttab-widget .ttab-title').eq(currentItem).addClass('current-item');
-    $('#ttab-container').height($('.ttab-widget .ttab-content').eq(currentItem).height());        
+    $('#ttab-container').height($('.ttab-widget .ttab-content').eq(currentItem).height());
     $('.ttab-widget .ttab-content').eq(currentItem).fadeIn(fadeTime);
 
     $('.ttab-title').click(function(){
@@ -42,21 +42,21 @@ var InfiniteRotator =
       $(this).next('.ttab-content').show();
 
       clearInterval(infiniteLoop);
-    }); 
-  
+    });
+
     //loop through the items
     var infiniteLoop = setInterval(function(){
       $('.ttab-widget .ttab-content').eq(currentItem).hide();
-      
+
       if(currentItem == numberOfItems -1){
         currentItem = 0;
       }else{
         currentItem++;
       }
-      
+
       $('.ttab-widget .ttab-title').removeClass('current-item');
       $('.ttab-widget .ttab-title').eq(currentItem).addClass('current-item');
-      $('#ttab-container').height($('.ttab-widget .ttab-content').eq(currentItem).height()).fadeIn(fadeTime);        
+      $('#ttab-container').height($('.ttab-widget .ttab-content').eq(currentItem).height()).fadeIn(fadeTime);
       $('.ttab-widget .ttab-content').eq(currentItem).fadeIn(fadeTime);
 
     }, itemInterval);
@@ -68,5 +68,5 @@ InfiniteRotator.init();
 //   InfiniteRotator.init($(this));
 // });
 
-});     
+});
 })(jQuery);
